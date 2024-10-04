@@ -28,6 +28,8 @@ function init() {
   player0Section.classList.remove('player--winner');
   activePlayer = 0;
   dice.classList.add('hidden');
+  diceRollButton.classList.remove('hidden');
+  holdButton.classList.remove('hidden');
 }
 
 function changeTurn() {
