@@ -38,11 +38,12 @@ main {
 .player {
   background-color: rgba(255, 255, 255, 0.3);
   flex: 50%;
-  padding: 11rem 13rem;
+  padding: 11rem 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.75s;
+  width: 45rem;
 }
 
 /* ELEMENTS */
@@ -54,7 +55,11 @@ main {
   word-spacing: 2px;
   font-weight: 300;
   margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
+  text-align: center;
 }
 
 .score {
@@ -116,7 +121,6 @@ main {
   transition: all 0.2s;
   z-index: 50;
 
-  background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
 
@@ -145,7 +149,12 @@ main {
 }
 
 .btn:active {
-  transform: translate(-50%, 3px);
+  transform: translate(-50%) scale(105%);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: scale(105%);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
@@ -175,6 +184,90 @@ main {
   color: #c7365f;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-height: calc(100vh - 20%);
+  background: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  padding: 6rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.modal-btn {
+  color: #2f2f2f;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.register-form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.register-form .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.register-form .description h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.register-form .description h3 {
+  font-size: 1.8rem;
+  /* text-align: center; */
+}
+.register-form h4 {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.modal-inputs {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.modal input {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+}
 .hidden {
   display: none;
 }
@@ -211,7 +304,7 @@ main {
     backdrop-filter: none;
   }
   .player {
-    padding: 15rem 10rem;
+    padding: 10rem 4rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -220,6 +313,7 @@ main {
     border-radius: 1rem;
     z-index: 20;
     background: #dcb7c5;
+    width: 40rem;
   }
   .player:not(.player--active) {
     top: 50%;
@@ -230,5 +324,17 @@ main {
   .dice {
     top: 50%;
     transform: translate(calc(-50% - 2rem), calc(-50% - 2rem));
+  }
+  .modal-inputs {
+    flex-direction: column;
+  }
+  .btn--new {
+    top: 8rem;
+  }
+  .btn--roll {
+    bottom: 16rem;
+  }
+  .btn--hold {
+    bottom: 8rem;
   }
 }
