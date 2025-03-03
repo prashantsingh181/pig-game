@@ -2,6 +2,8 @@
 
 Welcome to the **Pig Dice Game**! This fun and interactive game allows players to take turns rolling a die, accumulating points while avoiding cursed numbers. The first player to reach the winning score wins!
 
+![Pig Dice Game Screenshot](game-screenshot.png)
+
 ## Live Demo
 
 You can play the game here: [Pig Dice Game](https://prashantsingh181.github.io/pig-game/)
